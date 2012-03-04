@@ -342,19 +342,6 @@ FileETag None
 # and uncomment option 2.
 # IMPORTANT: NEVER USE BOTH RULES AT THE SAME TIME!
 
-# ----------------------------------------------------------------------
-
-# Option 1:
-# Rewrite "www.example.com -> example.com"
-
-<IfModule mod_rewrite.c>
-  RewriteCond %{HTTPS} !=on
-  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-  RewriteRule ^ http://%1%{REQUEST_URI} [R=301,L]
-</IfModule>
-
-# ----------------------------------------------------------------------
-
 # Option 2:
 # To rewrite "example.com -> www.example.com" uncomment the following lines.
 # Be aware that the following rule might not be a good idea if you
@@ -417,10 +404,6 @@ Options -MultiViews
 # ----------------------------------------------------------------------
 # Custom 404 page
 # ----------------------------------------------------------------------
-
-# You can add custom pages to handle 500 or 403 pretty easily, if you like.
-ErrorDocument 404 /404.html
-
 
 
 # ----------------------------------------------------------------------
